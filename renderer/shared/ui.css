@@ -1,0 +1,231 @@
+/* TerminalShot design system — dark glass, violet→cyan accent */
+:root {
+  --bg0: #0d0e14;
+  --bg1: #12141d;
+  --bg2: #191c28;
+  --bg3: #212536;
+  --bg4: #2a2f45;
+  --line: rgba(255, 255, 255, 0.08);
+  --line2: rgba(255, 255, 255, 0.14);
+  --tx0: #f2f4fb;
+  --tx1: #b9bed1;
+  --tx2: #7e849c;
+  --acc: #7c5cff;
+  --acc2: #38d9f5;
+  --grad: linear-gradient(135deg, #7c5cff, #38d9f5);
+  --grad-soft: linear-gradient(135deg, rgba(124, 92, 255, 0.22), rgba(56, 217, 245, 0.22));
+  --ok: #3ddc84;
+  --warn: #ffb454;
+  --err: #ff5470;
+  --r1: 8px;
+  --r2: 12px;
+  --r3: 18px;
+  --sh1: 0 4px 16px rgba(0, 0, 0, 0.35);
+  --sh2: 0 18px 60px rgba(0, 0, 0, 0.55), 0 4px 14px rgba(0, 0, 0, 0.4);
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  font-family: 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif;
+  color: var(--tx0);
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+  overflow: hidden;
+}
+
+body { background: transparent; }
+
+::-webkit-scrollbar { width: 9px; height: 9px; }
+::-webkit-scrollbar-thumb { background: var(--bg4); border-radius: 8px; border: 2px solid transparent; background-clip: content-box; }
+::-webkit-scrollbar-thumb:hover { background: #39405c; background-clip: content-box; border: 2px solid transparent; }
+::-webkit-scrollbar-track { background: transparent; }
+
+/* ---- glass card shell used by the floating windows ---- */
+.fs-card {
+  background: linear-gradient(180deg, rgba(30, 33, 48, 0.92), rgba(16, 18, 27, 0.94));
+  backdrop-filter: blur(18px);
+  border: 1px solid var(--line2);
+  border-radius: var(--r3);
+  box-shadow: var(--sh2);
+  overflow: hidden;
+}
+
+/* ---- buttons ---- */
+.fs-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: 1px solid var(--line2);
+  background: var(--bg3);
+  color: var(--tx0);
+  font: 600 12.5px/1 'Segoe UI Variable Text', 'Segoe UI', sans-serif;
+  padding: 8px 14px;
+  border-radius: var(--r1);
+  cursor: pointer;
+  transition: background 0.14s var(--ease), border-color 0.14s var(--ease), transform 0.1s var(--ease), box-shadow 0.14s var(--ease);
+  white-space: nowrap;
+}
+.fs-btn:hover { background: var(--bg4); border-color: rgba(255, 255, 255, 0.22); }
+.fs-btn:active { transform: scale(0.965); }
+.fs-btn.primary {
+  background: var(--grad);
+  border-color: transparent;
+  color: #fff;
+  box-shadow: 0 2px 12px rgba(124, 92, 255, 0.35);
+}
+.fs-btn.primary:hover { filter: brightness(1.12); box-shadow: 0 4px 18px rgba(124, 92, 255, 0.5); }
+.fs-btn.ghost { background: transparent; border-color: transparent; color: var(--tx1); }
+.fs-btn.ghost:hover { background: rgba(255, 255, 255, 0.07); color: var(--tx0); }
+.fs-btn.danger:hover { background: rgba(255, 84, 112, 0.16); border-color: rgba(255, 84, 112, 0.45); color: #ff8ba0; }
+.fs-btn svg { width: 15px; height: 15px; flex: none; }
+
+/* icon-only square button */
+.fs-ibtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px; height: 30px;
+  border: none;
+  border-radius: var(--r1);
+  background: transparent;
+  color: var(--tx1);
+  cursor: pointer;
+  transition: background 0.12s var(--ease), color 0.12s var(--ease), transform 0.1s var(--ease);
+}
+.fs-ibtn:hover { background: rgba(255, 255, 255, 0.09); color: var(--tx0); }
+.fs-ibtn:active { transform: scale(0.92); }
+.fs-ibtn.close:hover { background: rgba(255, 84, 112, 0.85); color: #fff; }
+.fs-ibtn svg { width: 15px; height: 15px; }
+
+/* ---- chips / badges ---- */
+.fs-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font: 600 10.5px/1 'Segoe UI Variable Text', 'Segoe UI', sans-serif;
+  letter-spacing: 0.4px;
+  color: var(--tx2);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 4px 9px;
+}
+.fs-kbd {
+  font: 600 10px/1 Consolas, monospace;
+  color: var(--tx1);
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid var(--line2);
+  border-bottom-width: 2px;
+  border-radius: 5px;
+  padding: 3px 6px;
+  white-space: nowrap;
+}
+
+/* ---- toggle switch ---- */
+.fs-toggle {
+  position: relative;
+  width: 38px; height: 21px;
+  border-radius: 999px;
+  background: var(--bg4);
+  border: 1px solid var(--line2);
+  cursor: pointer;
+  transition: background 0.18s var(--ease), border-color 0.18s var(--ease);
+  flex: none;
+}
+.fs-toggle::after {
+  content: '';
+  position: absolute;
+  top: 2px; left: 2px;
+  width: 15px; height: 15px;
+  border-radius: 50%;
+  background: var(--tx1);
+  transition: transform 0.18s var(--ease), background 0.18s var(--ease);
+}
+.fs-toggle.on { background: var(--grad); border-color: transparent; }
+.fs-toggle.on::after { transform: translateX(17px); background: #fff; }
+
+/* ---- range slider ---- */
+input[type='range'].fs-range {
+  -webkit-appearance: none;
+  height: 4px;
+  border-radius: 4px;
+  background: var(--bg4);
+  outline: none;
+  cursor: pointer;
+}
+input[type='range'].fs-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  border: none;
+  box-shadow: 0 0 0 3px rgba(124, 92, 255, 0.45);
+  transition: box-shadow 0.14s var(--ease);
+}
+input[type='range'].fs-range::-webkit-slider-thumb:hover { box-shadow: 0 0 0 5px rgba(124, 92, 255, 0.55); }
+
+/* ---- tooltip (data-tip) ---- */
+[data-tip] { position: relative; }
+[data-tip]::after {
+  content: attr(data-tip);
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 8px);
+  transform: translateX(-50%) translateY(3px);
+  background: #05060a;
+  border: 1px solid var(--line2);
+  color: var(--tx0);
+  font: 600 11px/1 'Segoe UI Variable Text', 'Segoe UI', sans-serif;
+  padding: 6px 9px;
+  border-radius: 7px;
+  white-space: pre;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.12s var(--ease) 0.25s, transform 0.12s var(--ease) 0.25s;
+  z-index: 99;
+  box-shadow: var(--sh1);
+}
+[data-tip]:hover::after { opacity: 1; transform: translateX(-50%) translateY(0); }
+[data-tip].tip-bottom::after { bottom: auto; top: calc(100% + 8px); }
+
+/* ---- toast ---- */
+.fs-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 46px;
+  transform: translateX(-50%) translateY(14px);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(8, 9, 14, 0.92);
+  border: 1px solid var(--line2);
+  border-radius: 10px;
+  padding: 10px 16px;
+  font: 600 12.5px/1 'Segoe UI Variable Text', 'Segoe UI', sans-serif;
+  color: var(--tx0);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s var(--ease), transform 0.18s var(--ease);
+  z-index: 200;
+  box-shadow: var(--sh1);
+}
+.fs-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+.fs-toast .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--ok); }
+
+.fs-logo {
+  width: 22px; height: 22px;
+  border-radius: 6px;
+  flex: none;
+}
+.fs-wordmark {
+  font: 700 14px/1 'Segoe UI Variable Display', 'Segoe UI', sans-serif;
+  letter-spacing: 0.2px;
+  background: linear-gradient(100deg, #fff 30%, #b9a8ff 70%, #7fe7ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}

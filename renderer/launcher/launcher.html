@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>TerminalShot</title>
+  <link rel="stylesheet" href="../shared/ui.css" />
+  <link rel="stylesheet" href="launcher.css" />
+</head>
+<body>
+  <div id="card" class="fs-card">
+    <header id="titlebar">
+      <img class="fs-logo" src="../../assets/icon-64.png" alt="" />
+      <span class="fs-wordmark">TerminalShot</span>
+      <span class="fs-chip">v1.0</span>
+      <div class="spacer"></div>
+      <button class="fs-ibtn" id="btnMin" data-tip="Minimize to tray"></button>
+      <button class="fs-ibtn close" id="btnHide" data-tip="Hide (stays in tray)"></button>
+    </header>
+
+    <main id="body">
+      <div id="modes">
+        <button class="mode hero" data-mode="page">
+          <span class="mode-icon"></span>
+          <span class="mode-name">Full page</span>
+          <span class="mode-desc">Auto-scrolls the page and stitches one long screenshot</span>
+          <span class="fs-kbd" data-hk="page"></span>
+        </button>
+        <button class="mode" data-mode="area">
+          <span class="mode-icon"></span>
+          <span class="mode-name">Area</span>
+          <span class="mode-desc">Drag a region, pixel-perfect magnifier</span>
+          <span class="fs-kbd" data-hk="area"></span>
+        </button>
+        <button class="mode" data-mode="window">
+          <span class="mode-icon"></span>
+          <span class="mode-name">Window</span>
+          <span class="mode-desc">Pick any open window</span>
+          <span class="fs-kbd" data-hk="window"></span>
+        </button>
+        <button class="mode" data-mode="full">
+          <span class="mode-icon"></span>
+          <span class="mode-name">Full screen</span>
+          <span class="mode-desc">Entire display, instantly</span>
+          <span class="fs-kbd" data-hk="full"></span>
+        </button>
+        <button class="mode" data-mode="scroll">
+          <span class="mode-icon"></span>
+          <span class="mode-name">Scrolling</span>
+          <span class="mode-desc">Auto-stitch as you scroll</span>
+          <span class="fs-kbd" data-hk="scroll"></span>
+        </button>
+      </div>
+
+      <section id="recentsSection">
+        <div class="section-head">
+          <span class="section-title">Recent captures</span>
+          <button class="fs-btn ghost" id="btnFolder">Open folder</button>
+        </div>
+        <div id="recents"></div>
+        <div id="recentsEmpty">No captures yet — press a mode above or use a hotkey.</div>
+      </section>
+    </main>
+
+    <footer id="footer">
+      <span id="trayNote">Runs in the tray — hotkeys work anywhere</span>
+      <div class="spacer"></div>
+      <button class="fs-ibtn" id="btnSettings" data-tip="Settings"></button>
+    </footer>
+
+    <!-- settings sheet -->
+    <div id="settings">
+      <div class="section-head">
+        <span class="section-title">Settings</span>
+        <button class="fs-ibtn" id="btnSettingsClose"></button>
+      </div>
+      <div class="set-row">
+        <div class="set-info"><b>Copy to clipboard</b><span>Every capture is copied automatically</span></div>
+        <div class="fs-toggle" id="tglCopy"></div>
+      </div>
+      <div class="set-row">
+        <div class="set-info"><b>Preview duration</b><span>Floating card lingers for <b id="thumbSecsLabel">6s</b></span></div>
+        <input type="range" class="fs-range" id="rngThumb" min="2" max="15" step="1" style="width:110px" />
+      </div>
+      <div class="set-row col">
+        <div class="set-info"><b>Save folder</b><span id="savePathLabel"></span></div>
+        <div class="row-btns">
+          <button class="fs-btn" id="btnChangeFolder">Change…</button>
+          <button class="fs-btn ghost" id="btnOpenFolder2">Open</button>
+        </div>
+      </div>
+      <div class="set-row col">
+        <div class="set-info"><b>Global hotkeys</b><span>Edit in <code>data/settings.json</code>, then restart</span></div>
+        <div id="hotkeyList"></div>
+      </div>
+      <button class="fs-btn danger" id="btnQuit" style="margin-top:14px; width:100%">Quit TerminalShot</button>
+    </div>
+  </div>
+  <div class="fs-toast" id="toast"><span class="dot"></span><span id="toastMsg"></span></div>
+
+  <script src="../shared/icons.js"></script>
+  <script src="launcher.js"></script>
+</body>
+</html>

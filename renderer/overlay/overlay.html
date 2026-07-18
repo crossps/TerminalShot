@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>TerminalShot Overlay</title>
+  <link rel="stylesheet" href="../shared/ui.css" />
+  <link rel="stylesheet" href="overlay.css" />
+</head>
+<body>
+  <canvas id="cv"></canvas>
+
+  <div id="hint">
+    <span id="hintText">Drag to select an area</span>
+    <span class="fs-kbd">Esc</span><span class="hint-dim">cancel</span>
+  </div>
+
+  <div id="sizeBadge"></div>
+
+  <div id="mag">
+    <canvas id="magCv" width="176" height="176"></canvas>
+    <div id="magInfo">
+      <div class="mag-row"><span id="magPos">0, 0</span><span id="magHexWrap"><i id="magSwatch"></i><span id="magHex">#000000</span></span></div>
+      <div class="mag-row" id="magSelRow"><span class="mag-dim-label">SELECTION</span><span id="magSel">—</span></div>
+    </div>
+  </div>
+
+  <script src="overlay.js"></script>
+</body>
+</html>

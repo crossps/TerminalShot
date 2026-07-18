@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>TerminalShot Window Picker</title>
+  <link rel="stylesheet" href="../shared/ui.css" />
+  <link rel="stylesheet" href="picker.css" />
+</head>
+<body>
+  <div id="card" class="fs-card">
+    <header id="head">
+      <img class="fs-logo" src="../../assets/icon-64.png" alt="" />
+      <span id="headTitle">Capture a window</span>
+      <span class="fs-chip" id="count"></span>
+      <div class="spacer"></div>
+      <button class="fs-btn ghost" id="btnRefresh">Refresh</button>
+      <span class="fs-kbd">Esc</span>
+      <button class="fs-ibtn close" id="btnClose"></button>
+    </header>
+    <div id="grid"></div>
+    <div id="empty">No capturable windows found.</div>
+  </div>
+  <script src="../shared/icons.js"></script>
+  <script src="picker.js"></script>
+</body>
+</html>

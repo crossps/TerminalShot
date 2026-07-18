@@ -1,0 +1,18 @@
+node_modules/
+release/
+dist/
+
+# Local state and captures
+data/
+scripts/.tmp-data/
+scripts/.docs-data/
+scripts/shots/
+
+# Logs and platform noise
+*.log
+*.tmp
+Thumbs.db
+.DS_Store
+
+# Local project instructions
+CLAUDE.md

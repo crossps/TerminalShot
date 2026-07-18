@@ -1,0 +1,72 @@
+html, body { background: transparent; cursor: crosshair; }
+body.frame-mode { cursor: default; }
+
+#cv { position: fixed; inset: 0; width: 100vw; height: 100vh; display: block; }
+
+#hint {
+  position: fixed;
+  top: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(8, 9, 14, 0.88);
+  border: 1px solid var(--line2);
+  border-radius: 999px;
+  padding: 9px 16px;
+  font: 600 12.5px/1 'Segoe UI Variable Text', 'Segoe UI', sans-serif;
+  color: var(--tx0);
+  box-shadow: var(--sh1);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s var(--ease);
+  z-index: 10;
+}
+#hint.show { opacity: 1; }
+.hint-dim { color: var(--tx2); font-weight: 400; }
+
+#sizeBadge {
+  position: fixed;
+  background: rgba(8, 9, 14, 0.92);
+  border: 1px solid rgba(124, 92, 255, 0.55);
+  border-radius: 7px;
+  padding: 5px 9px;
+  font: 700 11.5px/1 Consolas, monospace;
+  color: #d9d2ff;
+  pointer-events: none;
+  display: none;
+  z-index: 10;
+  white-space: nowrap;
+}
+
+#mag {
+  position: fixed;
+  width: 178px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(8, 9, 14, 0.94);
+  box-shadow: var(--sh2);
+  pointer-events: none;
+  display: none;
+  z-index: 11;
+}
+#magCv { display: block; width: 176px; height: 176px; }
+#magInfo { padding: 7px 10px 8px; border-top: 1px solid var(--line2); }
+.mag-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font: 600 10.5px/1.7 Consolas, monospace;
+  color: var(--tx1);
+}
+#magHexWrap { display: inline-flex; align-items: center; gap: 6px; color: var(--tx0); }
+#magSwatch {
+  width: 10px; height: 10px;
+  border-radius: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  display: inline-block;
+}
+.mag-dim-label { color: var(--tx2); font-size: 8.5px; letter-spacing: 1px; }
+#magSel { color: #9fe8ff; }

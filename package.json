@@ -1,0 +1,56 @@
+{
+  "name": "terminalshot",
+  "productName": "TerminalShot",
+  "version": "1.0.0",
+  "description": "A polished Windows screenshot studio with pixel-precise capture, full-page stitching, a floating handoff card, and a vector annotation editor.",
+  "private": true,
+  "license": "MIT",
+  "author": "crossps",
+  "homepage": "https://github.com/crossps/TerminalShot#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crossps/TerminalShot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/crossps/TerminalShot/issues"
+  },
+  "main": "main/main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "node scripts/verify.js --unit",
+    "icon": "node scripts/gen-icon.js",
+    "verify": "node scripts/verify.js",
+    "dist": "electron-builder --win portable"
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^26.0.12",
+    "playwright-core": "^1.49.0"
+  },
+  "dependencies": {
+    "koffi": "^3.1.0"
+  },
+  "build": {
+    "appId": "com.crossps.terminalshot",
+    "productName": "TerminalShot",
+    "artifactName": "TerminalShot-${version}-windows-${arch}.${ext}",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "assets/**/*",
+      "main/**/*",
+      "renderer/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "portable",
+          "arch": ["x64"]
+        }
+      ],
+      "icon": "assets/icon-256.png"
+    }
+  }
+}

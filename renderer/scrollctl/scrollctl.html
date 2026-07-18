@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>TerminalShot Scroll Capture</title>
+  <link rel="stylesheet" href="../shared/ui.css" />
+  <link rel="stylesheet" href="scrollctl.css" />
+</head>
+<body>
+  <div id="bar" class="fs-card">
+    <span id="rec"></span>
+    <div id="info">
+      <b id="statusLine">Scroll the content…</b>
+      <span id="detail">Captured <b id="height">0</b> px · <span id="frames">0</span> frames</span>
+    </div>
+    <div class="spacer"></div>
+    <button class="fs-btn primary" id="btnDone">Done</button>
+    <button class="fs-ibtn close" id="btnCancel" data-tip="Cancel"></button>
+  </div>
+  <script src="../shared/icons.js"></script>
+  <script src="scrollctl.js"></script>
+</body>
+</html>

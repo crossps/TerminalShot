@@ -1,0 +1,83 @@
+body { padding: 10px; }
+
+#card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(30px);
+  opacity: 0;
+  transition: transform 0.28s var(--ease), opacity 0.28s var(--ease);
+}
+#card.in { transform: none; opacity: 1; }
+#card.out { transform: translateX(40px); opacity: 0; transition-duration: 0.2s; }
+
+#imgWrap {
+  position: relative;
+  flex: 1;
+  margin: 10px 10px 0;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--line2);
+  background:
+    repeating-conic-gradient(#171923 0% 25%, #10121a 0% 50%) 0 0 / 18px 18px;
+  cursor: pointer;
+  transition: border-color 0.15s var(--ease), box-shadow 0.15s var(--ease);
+}
+#imgWrap:hover { border-color: rgba(124, 92, 255, 0.7); box-shadow: 0 0 0 3px rgba(124, 92, 255, 0.2); }
+#imgWrap:active { cursor: grabbing; }
+#shot {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  pointer-events: none;
+}
+#dims {
+  position: absolute;
+  left: 7px;
+  bottom: 7px;
+  background: rgba(5, 6, 10, 0.82);
+  border: 1px solid var(--line2);
+  border-radius: 6px;
+  padding: 4px 7px;
+  font: 700 10px/1 Consolas, monospace;
+  color: var(--tx1);
+  pointer-events: none;
+}
+
+#ring {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 26px;
+  height: 26px;
+  transform: rotate(-90deg);
+  pointer-events: none;
+}
+#ring circle { fill: rgba(5,6,10,0.6); stroke-width: 3; }
+#ringBg { stroke: rgba(255, 255, 255, 0.18); fill: rgba(5,6,10,0.6); }
+#ringFg { stroke: var(--acc2); fill: none; stroke-linecap: round; stroke-dasharray: 81.7; }
+#ring.hidden { display: none; }
+
+#bar {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 7px 8px;
+}
+.spacer { flex: 1; }
+#copied {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font: 600 10.5px/1 'Segoe UI Variable Text', 'Segoe UI', sans-serif;
+  color: var(--tx2);
+  padding-left: 4px;
+  opacity: 0;
+  transition: opacity 0.2s var(--ease);
+}
+#copied.show { opacity: 1; }
+#copied i { width: 6px; height: 6px; border-radius: 50%; background: var(--ok); }
+#aPin.active { color: var(--acc2); background: rgba(56, 217, 245, 0.13); }
+#bar .fs-ibtn { width: 27px; height: 27px; }
+#bar .fs-ibtn svg { width: 14px; height: 14px; }

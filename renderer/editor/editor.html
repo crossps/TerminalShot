@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>TerminalShot Editor</title>
+  <link rel="stylesheet" href="../shared/ui.css" />
+  <link rel="stylesheet" href="editor.css" />
+</head>
+<body>
+  <header id="titlebar">
+    <img class="fs-logo" src="../../assets/icon-64.png" alt="" />
+    <span class="fs-wordmark">TerminalShot</span>
+    <span id="docName"><span id="docNameText">—</span><i id="dirtyDot"></i></span>
+    <div class="spacer"></div>
+    <button class="fs-ibtn" id="wMin"></button>
+    <button class="fs-ibtn" id="wMax"></button>
+    <button class="fs-ibtn close" id="wClose"></button>
+  </header>
+
+  <div id="main">
+    <nav id="rail">
+      <button class="tool" data-tool="select" data-tip="Select / Move  ·  V"></button>
+      <button class="tool" data-tool="pen" data-tip="Pen  ·  P"></button>
+      <button class="tool" data-tool="highlighter" data-tip="Highlighter  ·  H"></button>
+      <button class="tool" data-tool="line" data-tip="Line  ·  L"></button>
+      <button class="tool" data-tool="arrow" data-tip="Arrow  ·  A"></button>
+      <button class="tool" data-tool="rect" data-tip="Rectangle  ·  R\n(hold Shift for square)"></button>
+      <button class="tool" data-tool="ellipse" data-tip="Ellipse  ·  E\n(hold Shift for circle)"></button>
+      <button class="tool" data-tool="text" data-tip="Text  ·  T"></button>
+      <button class="tool" data-tool="step" data-tip="Step marker  ·  S\n(numbered badges)"></button>
+      <button class="tool" data-tool="blur" data-tip="Pixelate  ·  B\n(hide sensitive info)"></button>
+      <div class="rail-sep"></div>
+      <button class="tool" data-tool="crop" data-tip="Crop  ·  C"></button>
+    </nav>
+
+    <div id="right">
+      <div id="options">
+        <div class="opt-group" id="optColors">
+          <span class="swatch" data-c="#ff5470"></span>
+          <span class="swatch" data-c="#ffb454"></span>
+          <span class="swatch" data-c="#ffe45c"></span>
+          <span class="swatch" data-c="#3ddc84"></span>
+          <span class="swatch" data-c="#38d9f5"></span>
+          <span class="swatch" data-c="#7c5cff"></span>
+          <span class="swatch" data-c="#ff7ad9"></span>
+          <span class="swatch" data-c="#ffffff"></span>
+          <span class="swatch" data-c="#111318"></span>
+          <label id="customColor" data-tip="Custom color"><input type="color" id="colorInput" value="#ff5470" /></label>
+        </div>
+        <div class="opt-sep"></div>
+        <div class="opt-group" id="optWidth">
+          <span class="opt-label">Stroke</span>
+          <input type="range" class="fs-range" id="widthRange" min="1" max="24" value="4" style="width:90px" />
+          <span id="widthPreviewWrap"><i id="widthPreview"></i></span>
+        </div>
+        <div class="opt-sep" id="fillSep"></div>
+        <div class="opt-group seg" id="optFill">
+          <button data-fill="outline" class="on">Outline</button>
+          <button data-fill="duo">Duo</button>
+          <button data-fill="fill">Fill</button>
+        </div>
+        <div class="opt-group" id="optFont" style="display:none">
+          <span class="opt-label">Size</span>
+          <input type="range" class="fs-range" id="fontRange" min="12" max="96" value="28" style="width:90px" />
+          <span class="opt-value" id="fontValue">28</span>
+        </div>
+        <div class="spacer"></div>
+        <div class="opt-group">
+          <button class="fs-ibtn" id="btnUndo" data-tip="Undo  ·  Ctrl+Z"></button>
+          <button class="fs-ibtn" id="btnRedo" data-tip="Redo  ·  Ctrl+Y"></button>
+        </div>
+        <div class="opt-sep"></div>
+        <button class="fs-btn" id="btnCopy">Copy</button>
+        <button class="fs-btn ghost" id="btnSaveAs">Save as…</button>
+        <button class="fs-btn primary" id="btnSave">Save</button>
+      </div>
+
+      <div id="viewport">
+        <canvas id="view"></canvas>
+        <div id="textEdit" contenteditable="true" spellcheck="false"></div>
+        <div id="cropBar">
+          <button class="fs-btn primary" id="cropApply">Apply crop</button>
+          <button class="fs-btn" id="cropCancel">Cancel</button>
+          <span class="fs-kbd">Enter</span>
+        </div>
+        <div id="dropHint">Loading…</div>
+      </div>
+
+      <footer id="statusbar">
+        <span id="stDims">—</span>
+        <span class="st-sep"></span>
+        <span id="stPos">—</span>
+        <div class="spacer"></div>
+        <span id="stHint">V select · P pen · T text · C crop · Ctrl+wheel zoom · Space pan</span>
+        <div class="spacer"></div>
+        <button class="fs-ibtn" id="zOut" data-tip="Zoom out"></button>
+        <span id="zLevel">100%</span>
+        <button class="fs-ibtn" id="zIn" data-tip="Zoom in"></button>
+        <button class="fs-ibtn" id="zFit" data-tip="Fit to window  ·  0"></button>
+      </footer>
+    </div>
+  </div>
+
+  <div class="fs-toast" id="toast"><span class="dot"></span><span id="toastMsg"></span></div>
+  <script src="../shared/icons.js"></script>
+  <script src="editor.js"></script>
+</body>
+</html>

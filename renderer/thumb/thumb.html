@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>TerminalShot Capture</title>
+  <link rel="stylesheet" href="../shared/ui.css" />
+  <link rel="stylesheet" href="thumb.css" />
+</head>
+<body>
+  <div id="card" class="fs-card">
+    <div id="imgWrap" draggable="true" title="Click to edit · Drag to drop the PNG anywhere">
+      <img id="shot" draggable="false" />
+      <div id="dims"></div>
+      <svg id="ring" viewBox="0 0 32 32"><circle id="ringBg" cx="16" cy="16" r="13"/><circle id="ringFg" cx="16" cy="16" r="13"/></svg>
+    </div>
+    <div id="bar">
+      <span id="copied"><i></i>Copied</span>
+      <div class="spacer"></div>
+      <button class="fs-ibtn" id="aEdit" data-tip="Edit"></button>
+      <button class="fs-ibtn" id="aCopy" data-tip="Copy"></button>
+      <button class="fs-ibtn" id="aSave" data-tip="Save as…"></button>
+      <button class="fs-ibtn" id="aFolder" data-tip="Show in folder"></button>
+      <button class="fs-ibtn" id="aPin" data-tip="Pin (keep open)"></button>
+      <button class="fs-ibtn close" id="aClose" data-tip="Dismiss"></button>
+    </div>
+  </div>
+  <script src="../shared/icons.js"></script>
+  <script src="thumb.js"></script>
+</body>
+</html>
