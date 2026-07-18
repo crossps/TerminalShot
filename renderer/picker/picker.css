@@ -14,10 +14,11 @@ body { padding: 16px; }
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 13px 14px 12px 18px;
+  padding: 12px 14px 11px 18px;
   border-bottom: 1px solid var(--line);
 }
-#headTitle { font: 700 14px/1 'Segoe UI Variable Display', 'Segoe UI', sans-serif; }
+#headTitle { font: 650 14px/1 'Segoe UI Variable Display', 'Segoe UI', sans-serif; }
+#headTitle::before { content: 'TARGET // '; color: var(--acc2); font: 600 9px/1 Consolas, monospace; letter-spacing: .8px; }
 .spacer { flex: 1; }
 
 #grid {
@@ -32,15 +33,15 @@ body { padding: 16px; }
 .witem {
   border: 1px solid var(--line);
   border-radius: var(--r2);
-  background: var(--bg1);
+  background: #090b0f;
   overflow: hidden;
   cursor: pointer;
   transition: transform 0.13s var(--ease), border-color 0.13s var(--ease), box-shadow 0.13s var(--ease);
 }
 .witem:hover {
   transform: translateY(-3px);
-  border-color: rgba(124, 92, 255, 0.65);
-  box-shadow: 0 10px 26px rgba(80, 60, 200, 0.28);
+  border-color: rgba(108, 140, 255, 0.65);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.42);
 }
 .witem:active { transform: translateY(-1px) scale(0.985); }
 .witem .shot {

@@ -23,7 +23,7 @@ body { padding: 10px; }
   cursor: pointer;
   transition: border-color 0.15s var(--ease), box-shadow 0.15s var(--ease);
 }
-#imgWrap:hover { border-color: rgba(124, 92, 255, 0.7); box-shadow: 0 0 0 3px rgba(124, 92, 255, 0.2); }
+#imgWrap:hover { border-color: rgba(108, 140, 255, 0.7); box-shadow: 0 0 0 3px rgba(108, 140, 255, 0.18); }
 #imgWrap:active { cursor: grabbing; }
 #shot {
   width: 100%;
@@ -38,7 +38,7 @@ body { padding: 10px; }
   bottom: 7px;
   background: rgba(5, 6, 10, 0.82);
   border: 1px solid var(--line2);
-  border-radius: 6px;
+  border-radius: 5px;
   padding: 4px 7px;
   font: 700 10px/1 Consolas, monospace;
   color: var(--tx1);

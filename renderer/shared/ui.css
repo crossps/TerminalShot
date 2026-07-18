@@ -1,28 +1,28 @@
-/* TerminalShot design system — dark glass, violet→cyan accent */
+/* Shared visual language for the TerminalApp Windows-tool line. */
 :root {
-  --bg0: #0d0e14;
-  --bg1: #12141d;
-  --bg2: #191c28;
-  --bg3: #212536;
-  --bg4: #2a2f45;
-  --line: rgba(255, 255, 255, 0.08);
-  --line2: rgba(255, 255, 255, 0.14);
-  --tx0: #f2f4fb;
-  --tx1: #b9bed1;
-  --tx2: #7e849c;
-  --acc: #7c5cff;
-  --acc2: #38d9f5;
-  --grad: linear-gradient(135deg, #7c5cff, #38d9f5);
-  --grad-soft: linear-gradient(135deg, rgba(124, 92, 255, 0.22), rgba(56, 217, 245, 0.22));
-  --ok: #3ddc84;
-  --warn: #ffb454;
-  --err: #ff5470;
-  --r1: 8px;
-  --r2: 12px;
-  --r3: 18px;
-  --sh1: 0 4px 16px rgba(0, 0, 0, 0.35);
-  --sh2: 0 18px 60px rgba(0, 0, 0, 0.55), 0 4px 14px rgba(0, 0, 0, 0.4);
-  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --bg0: #000000;
+  --bg1: #0d0f13;
+  --bg2: #12151b;
+  --bg3: #191d25;
+  --bg4: #222833;
+  --line: #1b2028;
+  --line2: #2a313d;
+  --tx0: #e8eaee;
+  --tx1: #a8b0bc;
+  --tx2: #667080;
+  --acc: #6c8cff;
+  --acc2: #22d3ee;
+  --grad: linear-gradient(135deg, #6c8cff 0%, #22d3ee 100%);
+  --grad-soft: linear-gradient(135deg, rgba(108, 140, 255, 0.16), rgba(34, 211, 238, 0.08));
+  --ok: #34d399;
+  --warn: #fbbf24;
+  --err: #f87171;
+  --r1: 7px;
+  --r2: 10px;
+  --r3: 14px;
+  --sh1: 0 8px 24px rgba(0, 0, 0, 0.48);
+  --sh2: 0 18px 54px rgba(0, 0, 0, 0.68), 0 0 0 1px rgba(0, 0, 0, 0.35);
+  --ease: cubic-bezier(0.22, 0.8, 0.26, 1);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -45,9 +45,9 @@ body { background: transparent; }
 
 /* ---- glass card shell used by the floating windows ---- */
 .fs-card {
-  background: linear-gradient(180deg, rgba(30, 33, 48, 0.92), rgba(16, 18, 27, 0.94));
-  backdrop-filter: blur(18px);
-  border: 1px solid var(--line2);
+  background: rgba(13, 15, 19, 0.97);
+  backdrop-filter: blur(16px);
+  border: 1px solid #303745;
   border-radius: var(--r3);
   box-shadow: var(--sh2);
   overflow: hidden;
@@ -62,22 +62,22 @@ body { background: transparent; }
   border: 1px solid var(--line2);
   background: var(--bg3);
   color: var(--tx0);
-  font: 600 12.5px/1 'Segoe UI Variable Text', 'Segoe UI', sans-serif;
+  font: 600 12px/1 'Segoe UI Variable Text', 'Segoe UI', sans-serif;
   padding: 8px 14px;
   border-radius: var(--r1);
   cursor: pointer;
   transition: background 0.14s var(--ease), border-color 0.14s var(--ease), transform 0.1s var(--ease), box-shadow 0.14s var(--ease);
   white-space: nowrap;
 }
-.fs-btn:hover { background: var(--bg4); border-color: rgba(255, 255, 255, 0.22); }
+.fs-btn:hover { background: var(--bg4); border-color: #414a5a; }
 .fs-btn:active { transform: scale(0.965); }
 .fs-btn.primary {
   background: var(--grad);
   border-color: transparent;
-  color: #fff;
-  box-shadow: 0 2px 12px rgba(124, 92, 255, 0.35);
+  color: #03080d;
+  box-shadow: 0 3px 16px rgba(34, 211, 238, 0.16);
 }
-.fs-btn.primary:hover { filter: brightness(1.12); box-shadow: 0 4px 18px rgba(124, 92, 255, 0.5); }
+.fs-btn.primary:hover { filter: brightness(1.08); box-shadow: 0 5px 22px rgba(34, 211, 238, 0.24); }
 .fs-btn.ghost { background: transparent; border-color: transparent; color: var(--tx1); }
 .fs-btn.ghost:hover { background: rgba(255, 255, 255, 0.07); color: var(--tx0); }
 .fs-btn.danger:hover { background: rgba(255, 84, 112, 0.16); border-color: rgba(255, 84, 112, 0.45); color: #ff8ba0; }
@@ -106,8 +106,9 @@ body { background: transparent; }
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  font: 600 10.5px/1 'Segoe UI Variable Text', 'Segoe UI', sans-serif;
-  letter-spacing: 0.4px;
+  font: 600 9px/1 Consolas, monospace;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
   color: var(--tx2);
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--line);
@@ -115,12 +116,12 @@ body { background: transparent; }
   padding: 4px 9px;
 }
 .fs-kbd {
-  font: 600 10px/1 Consolas, monospace;
+  font: 600 9px/1 Consolas, monospace;
   color: var(--tx1);
   background: rgba(255, 255, 255, 0.07);
   border: 1px solid var(--line2);
   border-bottom-width: 2px;
-  border-radius: 5px;
+  border-radius: 4px;
   padding: 3px 6px;
   white-space: nowrap;
 }
@@ -163,10 +164,10 @@ input[type='range'].fs-range::-webkit-slider-thumb {
   border-radius: 50%;
   background: #fff;
   border: none;
-  box-shadow: 0 0 0 3px rgba(124, 92, 255, 0.45);
+  box-shadow: 0 0 0 3px rgba(108, 140, 255, 0.35);
   transition: box-shadow 0.14s var(--ease);
 }
-input[type='range'].fs-range::-webkit-slider-thumb:hover { box-shadow: 0 0 0 5px rgba(124, 92, 255, 0.55); }
+input[type='range'].fs-range::-webkit-slider-thumb:hover { box-shadow: 0 0 0 5px rgba(108, 140, 255, 0.42); }
 
 /* ---- tooltip (data-tip) ---- */
 [data-tip] { position: relative; }
@@ -201,7 +202,7 @@ input[type='range'].fs-range::-webkit-slider-thumb:hover { box-shadow: 0 0 0 5px
   display: flex;
   align-items: center;
   gap: 8px;
-  background: rgba(8, 9, 14, 0.92);
+  background: rgba(13, 15, 19, 0.96);
   border: 1px solid var(--line2);
   border-radius: 10px;
   padding: 10px 16px;
@@ -217,15 +218,31 @@ input[type='range'].fs-range::-webkit-slider-thumb:hover { box-shadow: 0 0 0 5px
 .fs-toast .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--ok); }
 
 .fs-logo {
-  width: 22px; height: 22px;
-  border-radius: 6px;
+  width: 24px; height: 24px;
+  border-radius: 7px;
   flex: none;
 }
 .fs-wordmark {
-  font: 700 14px/1 'Segoe UI Variable Display', 'Segoe UI', sans-serif;
-  letter-spacing: 0.2px;
-  background: linear-gradient(100deg, #fff 30%, #b9a8ff 70%, #7fe7ff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  font: 700 13.5px/1 'Segoe UI Variable Display', 'Segoe UI', sans-serif;
+  letter-spacing: 0.1px;
+  color: var(--tx0);
+}
+.fs-wordmark::after { content: 'Shot'; color: var(--acc2); }
+.fs-wordmark { font-size: 0; }
+.fs-wordmark::before { content: 'Terminal'; color: var(--tx0); font-size: 13.5px; }
+.fs-wordmark::after { font-size: 13.5px; }
+
+button:focus-visible,
+input:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--acc2);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

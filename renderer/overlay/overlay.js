@@ -24,8 +24,8 @@ let drag = null;            // {x0,y0,x1,y1} css px
 let frameRect = null;       // css rect in frame mode
 let dirty = false;
 
-const ACC = '#8f7bff';
-const ACC2 = '#38d9f5';
+const ACC = '#6c8cff';
+const ACC2 = '#22d3ee';
 
 function resizeCanvas() {
   dpr = window.devicePixelRatio || 1;
@@ -56,7 +56,7 @@ function render() {
     ctx.rect(0, 0, cv.width, cv.height);
     ctx.rect(x - 3 * s, y - 3 * s, w + 6 * s, h + 6 * s);
     ctx.clip('evenodd');
-    ctx.shadowColor = 'rgba(124,92,255,0.75)';
+    ctx.shadowColor = 'rgba(108,140,255,0.72)';
     ctx.shadowBlur = 12 * s;
     ctx.lineWidth = 2 * s;
     ctx.strokeStyle = ACC;
@@ -80,7 +80,7 @@ function render() {
     ctx.drawImage(img, r.x * ratio, r.y * ratio, r.w * ratio, r.h * ratio, x, y, w, h);
     // border + glow
     ctx.save();
-    ctx.shadowColor = 'rgba(124,92,255,0.8)';
+    ctx.shadowColor = 'rgba(108,140,255,0.76)';
     ctx.shadowBlur = 14 * s;
     ctx.strokeStyle = ACC;
     ctx.lineWidth = 1.6 * s;

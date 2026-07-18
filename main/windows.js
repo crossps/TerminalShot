@@ -50,7 +50,7 @@ function init() {
 
   const editor = create('editor', 'editor/editor.html', {
     width: 1280, height: 840, minWidth: 1020, minHeight: 660,
-    backgroundColor: '#0d0e14', resizable: true, maximizable: true,
+    backgroundColor: '#000000', resizable: true, maximizable: true,
     title: 'TerminalShot Editor',
   });
   editor.on('close', e => { if (!quitting) { e.preventDefault(); editor.hide(); } });

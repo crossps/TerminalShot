@@ -11,42 +11,42 @@
     <header id="titlebar">
       <img class="fs-logo" src="../../assets/icon-64.png" alt="" />
       <span class="fs-wordmark">TerminalShot</span>
-      <span class="fs-chip">v1.0</span>
+      <span class="fs-chip">local // v1.0</span>
       <div class="spacer"></div>
       <button class="fs-ibtn" id="btnMin" data-tip="Minimize to tray"></button>
       <button class="fs-ibtn close" id="btnHide" data-tip="Hide (stays in tray)"></button>
     </header>
 
     <main id="body">
+      <div id="intro">
+        <span class="eyebrow">Capture desk</span>
+        <strong>Choose a capture path.</strong>
+        <span>Pixels stay local. Hotkeys stay ready.</span>
+      </div>
       <div id="modes">
-        <button class="mode hero" data-mode="page">
+        <button class="mode hero" data-mode="page" data-kind="Automated">
           <span class="mode-icon"></span>
-          <span class="mode-name">Full page</span>
-          <span class="mode-desc">Auto-scrolls the page and stitches one long screenshot</span>
+          <span class="mode-copy"><span class="mode-name">Full page</span><span class="mode-desc">Rewind, scroll and stitch one continuous image</span></span>
           <span class="fs-kbd" data-hk="page"></span>
         </button>
-        <button class="mode" data-mode="area">
+        <button class="mode" data-mode="area" data-kind="Precision">
           <span class="mode-icon"></span>
-          <span class="mode-name">Area</span>
-          <span class="mode-desc">Drag a region, pixel-perfect magnifier</span>
+          <span class="mode-copy"><span class="mode-name">Area</span><span class="mode-desc">Select with a pixel loupe</span></span>
           <span class="fs-kbd" data-hk="area"></span>
         </button>
-        <button class="mode" data-mode="window">
+        <button class="mode" data-mode="window" data-kind="Target">
           <span class="mode-icon"></span>
-          <span class="mode-name">Window</span>
-          <span class="mode-desc">Pick any open window</span>
+          <span class="mode-copy"><span class="mode-name">Window</span><span class="mode-desc">Pick an open app</span></span>
           <span class="fs-kbd" data-hk="window"></span>
         </button>
-        <button class="mode" data-mode="full">
+        <button class="mode" data-mode="full" data-kind="Display">
           <span class="mode-icon"></span>
-          <span class="mode-name">Full screen</span>
-          <span class="mode-desc">Entire display, instantly</span>
+          <span class="mode-copy"><span class="mode-name">Full screen</span><span class="mode-desc">Capture the active display</span></span>
           <span class="fs-kbd" data-hk="full"></span>
         </button>
-        <button class="mode" data-mode="scroll">
+        <button class="mode" data-mode="scroll" data-kind="Manual">
           <span class="mode-icon"></span>
-          <span class="mode-name">Scrolling</span>
-          <span class="mode-desc">Auto-stitch as you scroll</span>
+          <span class="mode-copy"><span class="mode-name">Scrolling</span><span class="mode-desc">Stitch while you scroll</span></span>
           <span class="fs-kbd" data-hk="scroll"></span>
         </button>
       </div>

@@ -330,14 +330,14 @@ function drawSelection(a) {
   const b = annBounds(a);
   const lw = 1.4 / zoom;
   ctx.save();
-  ctx.strokeStyle = '#38d9f5';
+  ctx.strokeStyle = '#22d3ee';
   ctx.lineWidth = lw;
   ctx.setLineDash([5 / zoom, 4 / zoom]);
   ctx.strokeRect(b.x, b.y, b.w, b.h);
   ctx.setLineDash([]);
   for (const h of selectionHandles(a)) {
     ctx.fillStyle = '#fff';
-    ctx.strokeStyle = '#38d9f5';
+    ctx.strokeStyle = '#22d3ee';
     ctx.beginPath();
     ctx.arc(h.x, h.y, 4.4 / zoom, 0, Math.PI * 2);
     ctx.fill();

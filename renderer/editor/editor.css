@@ -5,7 +5,7 @@ body { background: var(--bg0); display: flex; flex-direction: column; height: 10
   display: flex;
   align-items: center;
   gap: 9px;
-  height: 42px;
+  height: 38px;
   padding: 0 6px 0 14px;
   -webkit-app-region: drag;
   background: var(--bg1);
@@ -19,10 +19,10 @@ body { background: var(--bg0); display: flex; flex-direction: column; height: 10
   gap: 6px;
   font: 500 12px/1 'Segoe UI Variable Text', 'Segoe UI', sans-serif;
   color: var(--tx2);
-  background: rgba(255, 255, 255, 0.04);
+  background: #090b0f;
   border: 1px solid var(--line);
   padding: 6px 11px;
-  border-radius: 999px;
+  border-radius: 6px;
   margin-left: 6px;
   max-width: 40vw;
 }
@@ -41,20 +41,20 @@ body.dirty #dirtyDot { display: block; }
 #main { flex: 1; display: flex; min-height: 0; }
 
 #rail {
-  width: 52px;
+  width: 50px;
   flex: none;
   background: var(--bg1);
   border-right: 1px solid var(--line);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
-  padding: 10px 0;
+  gap: 3px;
+  padding: 8px 0;
 }
 .tool {
-  width: 38px; height: 38px;
+  width: 36px; height: 36px;
   border: 1px solid transparent;
-  border-radius: 10px;
+  border-radius: 8px;
   background: transparent;
   color: var(--tx1);
   cursor: pointer;
@@ -67,10 +67,10 @@ body.dirty #dirtyDot { display: block; }
 .tool:hover { background: rgba(255, 255, 255, 0.07); color: var(--tx0); }
 .tool:active { transform: scale(0.92); }
 .tool.on {
-  background: var(--grad-soft);
-  border-color: rgba(124, 92, 255, 0.55);
-  color: #cfc5ff;
-  box-shadow: 0 0 14px rgba(124, 92, 255, 0.25);
+  background: rgba(108, 140, 255, 0.13);
+  border-color: rgba(108, 140, 255, 0.48);
+  color: var(--acc2);
+  box-shadow: inset 2px 0 var(--acc2);
 }
 .rail-sep { width: 26px; height: 1px; background: var(--line2); margin: 5px 0; }
 .tool[data-tip]::after { left: calc(100% + 10px); bottom: auto; top: 50%; transform: translateY(-50%) translateX(-3px); }
@@ -83,7 +83,7 @@ body.dirty #dirtyDot { display: block; }
   display: flex;
   align-items: center;
   gap: 10px;
-  height: 48px;
+  height: 46px;
   padding: 0 12px;
   background: var(--bg1);
   border-bottom: 1px solid var(--line);
@@ -109,7 +109,7 @@ body.dirty #dirtyDot { display: block; }
 .swatch:hover { transform: scale(1.18); }
 .swatch.on {
   border-color: #fff;
-  box-shadow: 0 0 0 3px rgba(124, 92, 255, 0.5);
+  box-shadow: 0 0 0 3px rgba(108, 140, 255, 0.38);
   transform: scale(1.12);
 }
 #customColor {
@@ -123,7 +123,7 @@ body.dirty #dirtyDot { display: block; }
   transition: transform 0.12s var(--ease);
 }
 #customColor:hover { transform: scale(1.18); }
-#customColor.on { border-color: #fff; box-shadow: 0 0 0 3px rgba(124, 92, 255, 0.5); }
+#customColor.on { border-color: #fff; box-shadow: 0 0 0 3px rgba(108, 140, 255, 0.38); }
 #colorInput { position: absolute; inset: -6px; opacity: 0; cursor: pointer; }
 
 #widthPreviewWrap {
@@ -154,7 +154,7 @@ body.dirty #dirtyDot { display: block; }
 }
 .seg button:not(:last-child) { border-right: 1px solid var(--line); }
 .seg button:hover { color: var(--tx0); background: rgba(255,255,255,0.05); }
-.seg button.on { background: var(--grad-soft); color: #d5ccff; }
+.seg button.on { background: rgba(108, 140, 255, 0.14); color: #b8c6ff; }
 
 /* -------- viewport -------- */
 #viewport {
@@ -163,8 +163,8 @@ body.dirty #dirtyDot { display: block; }
   min-height: 0;
   overflow: hidden;
   background:
-    radial-gradient(1200px 700px at 70% -10%, rgba(124, 92, 255, 0.07), transparent 60%),
-    repeating-conic-gradient(#101119 0% 25%, #0c0d13 0% 50%) 0 0 / 22px 22px;
+    radial-gradient(1000px 600px at 70% -10%, rgba(34, 211, 238, 0.035), transparent 60%),
+    repeating-conic-gradient(#090b0f 0% 25%, #050609 0% 50%) 0 0 / 22px 22px;
 }
 #view { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
 #view.tool-cursor { cursor: crosshair; }
@@ -177,7 +177,7 @@ body.dirty #dirtyDot { display: block; }
   display: none;
   min-width: 12px;
   outline: none;
-  border: 1.5px dashed rgba(124, 92, 255, 0.8);
+  border: 1.5px dashed rgba(34, 211, 238, 0.8);
   border-radius: 4px;
   padding: 2px 5px;
   background: rgba(10, 11, 17, 0.35);
@@ -194,7 +194,7 @@ body.dirty #dirtyDot { display: block; }
   display: none;
   gap: 8px;
   align-items: center;
-  background: rgba(8, 9, 14, 0.92);
+  background: rgba(13, 15, 19, 0.96);
   border: 1px solid var(--line2);
   border-radius: 12px;
   padding: 8px;
